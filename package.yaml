@@ -1,0 +1,46 @@
+name:                taskell
+version:             0.1.0.0
+github:              "PeterGoedeke/taskell"
+license:             BSD3
+author:              "Peter Goedeke"
+maintainer:          "peterbgoedeke@gmail.com"
+copyright:           "Peter Goedeke"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+description:         Please see the README on GitHub at <https://github.com/PeterGoedeke/taskell#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  taskell-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -XNamedFieldPuns
+    dependencies:
+    - taskell
+
+tests:
+  taskell-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - taskell

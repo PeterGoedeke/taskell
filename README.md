@@ -1,14 +1,14 @@
 ## General
 -	The home screen is just a list of the tasks as boxes.
--	[Tasks](##tasks) may have various properties.
+-	[Tasks](#tasks) may have various properties.
 -	Pressing the up and down arrows navigates you through the list.
 -	Pressing the right arrow marks the currently selected task as completed in the way specified by the type of task and the attributes of the task.
 -	Tasks marked as completed which have properties such that they will reappear can be viewed on the upcoming screen with the `u` hotkey.
 -	Pressing `shift + right arrow` moves the currently selected task to the next day without marking it as completed.
 -	Actions such as these may be undone with the `ctrl + z` hotkey.
--	`ctrl + f` will open a [search](##search) dialogue which allows you to filter the list of tasks.
--	`ctrl + s` will open a [sort](##sort) dialogue which allows you to define the way in which tasks are sorted.
--	Tasks may be either tasks or [category tasks](##category-tasks). Category tasks contain multiple other tasks and operate slightly differently from regular tasks.
+-	`ctrl + f` will open a [search](#search) dialogue which allows you to filter the list of tasks.
+-	`ctrl + s` will open a [sort](#sort) dialogue which allows you to define the way in which tasks are sorted.
+-	Tasks may be either tasks or [category tasks](#category-tasks). Category tasks contain multiple other tasks and operate slightly differently from regular tasks.
 ## Tasks
 -	Tasks are defined by a title and an (optional) description. These are human readable and aren’t used by the application, other than for filtering.
 -	Tasks are created with the ‘n’ hotkey.
