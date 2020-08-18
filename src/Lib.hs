@@ -1,9 +1,18 @@
 module Lib where
 
-data Task a = Task a | Category [Task a] deriving (Show)
+data Task a = Task {
+    description :: a,
+    date :: Int
+} deriving (Show, Read)
 
 instance Functor Task where
-    fmap f (Task a) = Task (f a)
-    fmap f (Category a) = Category (map (\x -> fmap f x) a)
+    fmap f t@(Task{description=d}) = t{description=(f d)}
 
-test = Category [Task "h", Task "i"]
+instance Eq (Task a) where
+    Task{date=d1} == Task{date=d2} = d1 == d2
+
+instance Ord (Task a) where
+    compare Task{date=d1} Task{date=d2} = d1 `compare` d2
+
+-- need addTask which puts it where it should be in the order
+-- need remove and edit task

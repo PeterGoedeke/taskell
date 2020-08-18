@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 68e16be870a71f4753fbb99c0b7a8337b139e0dd45718b45307ee6c3bcfda0ad
+-- hash: aa13d0ba8bbd0285a1082d84269165f600230648d8a805dd9d071bff51d1e38b
 
 name:           taskell
 version:        0.1.0.0
@@ -34,6 +34,8 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , containers
+    , strict
   default-language: Haskell2010
 
 executable taskell-exe
@@ -45,6 +47,8 @@ executable taskell-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N -XNamedFieldPuns
   build-depends:
       base >=4.7 && <5
+    , containers
+    , strict
     , taskell
   default-language: Haskell2010
 
@@ -58,5 +62,7 @@ test-suite taskell-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
+    , strict
     , taskell
   default-language: Haskell2010
