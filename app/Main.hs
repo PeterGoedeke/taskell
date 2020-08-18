@@ -32,3 +32,13 @@ getInt' Nothing = do
     let parsed = readMaybe value :: Maybe Int
     getInt' parsed
 
+removeTask tasks = do
+    putStrLn "Enter the index of the task to remove"
+    index <- getInt
+    return (Im.delete index tasks)
+
+editTask tasks = do
+    putStrLn "Enter the index of the task to edit"
+    index <- getInt
+    task <- createTask
+    return (Im.insert index tasks)
