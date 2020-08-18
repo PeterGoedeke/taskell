@@ -11,6 +11,14 @@ import qualified Data.IntMap.Strict as Im
 import Lib
 
 main = undefined
+createTask :: IO (Task String)
+createTask = do
+    putStrLn "Enter the description of the new task"
+    description <- getLine
+    putStrLn "Enter the expiry time of the new task"
+    date <- getInt
+    return (Task{description, date})
+
 getInt :: IO (Int)
 getInt = do
     value <- getLine
