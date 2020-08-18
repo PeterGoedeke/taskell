@@ -10,7 +10,6 @@ import qualified Data.IntMap.Strict as Im
 
 import Lib
 
-main = undefined
 createTask :: IO (Task String)
 createTask = do
     putStrLn "Enter the description of the new task"
@@ -42,3 +41,14 @@ editTask tasks = do
     index <- getInt
     task <- createTask
     return (Im.insert index tasks)
+
+readData = do
+    file <- readFile "file.txt"
+    let list = fmap read (lines file) :: [(Int, String)]
+        fixedList = fmap (\(x,y) -> (x,(read y) :: Task String)) $ list
+    return $ Im.fromList fixedList
+
+main = do
+    file <- (readFile "file.txt")
+    tasks <- readData
+    print tasks
